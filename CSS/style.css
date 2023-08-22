@@ -50,10 +50,15 @@ h1{
     justify-content: center;
     background-color: var(--White);
     border-radius: 2rem;
+    transform: all .4s;
 }
 
 .close-container{
     visibility: hidden;
+}
+
+.open-container{
+    visibility: visible;
 }
 
 .seeme{
@@ -125,13 +130,17 @@ input:hover{
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     transform: translate(-50%, -80%) scale(0.1);
     visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+    transition: transform 0.6s, top 0.4s;
 }
 
 .open-popup{
     visibility: visible;
-    transform: translate(-50%, -80%) scale(1);
+    transform: translate(-20%, -50%) scale(1);
     top: 50%;
+}
+
+.close-popup{
+    visibility: hidden;
 }
 
 .popup button{
