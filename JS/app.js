@@ -2,19 +2,58 @@ let btn = document.getElementById('btn');
 let btn1 = document.getElementById('btn1');
 let popup = document.getElementById('popup');
 let container = document.getElementById('container');
+const email = document.getElementById("email");
+const form = document.getElementById("form");
 
-console.log(popup);
+// FORM VALIDATION
 
-function openPopup(){
-    popup.classList.add('open-popup')
-    container.classList.add('close-container')
+form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+    // get the values
+
+    const emailValue = email.value.trim();
+
+    if (emailValue === "" ){
+        setErrorFor(email, "Email address cannot be blank");
+    }else if (!emailValid(emailValue)){
+        setErrorFor(email, "Email is not valid");
+    } else {
+        setSuccessFor(email)
+    }
 }
 
-function closePopup(){
-    popup.classList.add('close-popup')
-    container.classList.add('open-container')
+function setErrorFor(input, message) {
+    const label = input.parentElement;
+    const small = label.querySelector("small")
+
+    // add error message inside small tag
+    small.innerText = message;
+
+    // add error class
+    label.className = "label error";
 }
 
-btn.addEventListener("click", openPopup);
-btn1.addEventListener("click", closePopup);
 
+
+// function openPopup(){
+//     popup.classList.add('open-popup')
+//     container.classList.add('close-container')
+// }
+
+// function closePopup(){
+//     popup.classList.add('close-popup')
+//     container.classList.add('open-container')
+// }
+
+// btn.addEventListener("click", openPopup);
+// btn1.addEventListener("click", closePopup);
+
+
+function emailValid(email) {
+    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+   }

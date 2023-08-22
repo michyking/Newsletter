@@ -98,6 +98,24 @@ form input{
     font-family: 'Roboto', sans-serif;
 }
 
+.label.error .email{
+    background-color: #ffc4bd;
+    color: #e74e3c;
+    border-color: #e74e3c;
+}
+
+
+small{
+    visibility: hidden;
+    position: absolute;
+    left: 37%;
+}
+
+.label.error small {
+    color: #e74e3c;
+    visibility: visible;
+}
+
 .img{
     margin-left: 20px;
 }
