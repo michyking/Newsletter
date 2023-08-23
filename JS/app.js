@@ -7,10 +7,20 @@ const form = document.getElementById("form");
 
 // FORM VALIDATION
 
-form.addEventListener("submit", e => {
+// form.addEventListener("submit", e => {
+//     e.preventDefault();
+
+//     checkInputs();
+// });
+
+btn.addEventListener("click", (e) => {
     e.preventDefault();
 
-    checkInputs();
+  if (checkInputs()) {
+    openPopup();
+  }
+
+  form.reset();
 });
 
 function checkInputs() {
@@ -22,9 +32,11 @@ function checkInputs() {
         setErrorFor(email, "Email address cannot be blank");
     }else if (!emailValid(emailValue)){
         setErrorFor(email, "Email is not valid");
-    } else {
-        setSuccessFor(email)
+        return false;
+    }else{
+         return true;
     }
+   
 }
 
 function setErrorFor(input, message) {
@@ -38,20 +50,19 @@ function setErrorFor(input, message) {
     label.className = "label error";
 }
 
+function openPopup(){
+    popup.classList.add('open-popup')
+    container.classList.add('close-container')
+}
 
+// CLOSING THE popup
 
-// function openPopup(){
-//     popup.classList.add('open-popup')
-//     container.classList.add('close-container')
-// }
+function closePopup(){
+    popup.classList.add('close-popup')
+    container.classList.add('open-container')
+}
 
-// function closePopup(){
-//     popup.classList.add('close-popup')
-//     container.classList.add('open-container')
-// }
-
-// btn.addEventListener("click", openPopup);
-// btn1.addEventListener("click", closePopup);
+btn1.addEventListener("click", closePopup);
 
 
 function emailValid(email) {

@@ -96,6 +96,7 @@ form input{
     border: 1px solid var(--Grey);
     border-radius: 7px;
     font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
 }
 
 .label.error .email{
