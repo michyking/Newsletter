@@ -7,12 +7,6 @@ const form = document.getElementById("form");
 
 // FORM VALIDATION
 
-// form.addEventListener("submit", e => {
-//     e.preventDefault();
-
-//     checkInputs();
-// });
-
 btn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -34,7 +28,8 @@ function checkInputs() {
         setErrorFor(email, "Email is not valid");
         return false;
     }else{
-         return true;
+      setErrorFor(email, ""); // Clear the error message if the email is valid
+      return true;
     }
    
 }
@@ -46,8 +41,12 @@ function setErrorFor(input, message) {
     // add error message inside small tag
     small.innerText = message;
 
-    // add error class
-    label.className = "label error";
+    // add and remove error class
+    if(message){
+        email.classList.add("error-input");
+    }else{
+        email.classList.remove("error-input");
+    }
 }
 
 function openPopup(){
@@ -58,8 +57,8 @@ function openPopup(){
 // CLOSING THE popup
 
 function closePopup(){
-    popup.classList.add('close-popup')
-    container.classList.add('open-container')
+     popup.classList.remove("open-popup");
+     container.classList.remove("close-container");
 }
 
 btn1.addEventListener("click", closePopup);

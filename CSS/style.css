@@ -99,7 +99,10 @@ form input{
     padding-left: 10px;
 }
 
-.label.error .email{
+/* The Error */
+
+
+.error-input{
     background-color: #ffc4bd;
     color: #e74e3c;
     border-color: #e74e3c;
@@ -107,14 +110,9 @@ form input{
 
 
 small{
-    visibility: hidden;
-    position: absolute;
-    left: 37%;
-}
-
-.label.error small {
     color: #e74e3c;
-    visibility: visible;
+    position: absolute;
+    left: 30%;
 }
 
 .img{
