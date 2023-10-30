@@ -69,8 +69,7 @@ h1{
 }
 
 .content {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin: 0 2rem;
 }
 .iconholder{
     display: flex;
@@ -112,11 +111,18 @@ form input{
 small{
     color: #e74e3c;
     position: absolute;
-    left: 30%;
+    left: 37%;
 }
 
 .img{
     margin-left: 20px;
+    width: 18.75rem;
+     height: 450px;
+    background-image: url('/images/illustration-sign-up-desktop.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 10px;
 }
 
 input::placeholder{
@@ -188,4 +194,32 @@ input:hover{
 .popup h1{
     line-height: 40px;
     font-size: 45px;
+}
+
+@media screen and (max-width: 890px) {
+    .container {
+        flex-direction: column;
+    }
+
+    form input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .seeme{
+        flex-direction: column-reverse;
+    }
+
+    .img{
+        background-image: url('/images/illustration-sign-up-mobile.svg');
+        height: 200px;
+        width: 400px;
+        background-size: cover;
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+
+    small{
+        left: 50%;
+    }
 }
