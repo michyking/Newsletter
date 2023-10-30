@@ -197,9 +197,9 @@ input:hover{
 }
 
 @media screen and (max-width: 890px) {
-    .container {
+    /* .container {
         flex-direction: column;
-    }
+    } */
 
     form input {
         width: 100%;
@@ -221,5 +221,15 @@ input:hover{
 
     small{
         left: 50%;
+    }
+
+    .content{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 572px){
+    .seeme{
+        margin: 0.8rem;
     }
 }
