@@ -232,4 +232,8 @@ input:hover{
     .seeme{
         margin: 0.8rem;
     }
+
+    .img{
+        width: 330px;
+    }
 }
