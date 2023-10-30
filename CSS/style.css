@@ -226,6 +226,10 @@ input:hover{
     .content{
         margin: 0;
     }
+
+    .popup{
+        left: 30%;
+    }
 }
 
 @media screen and (max-width: 572px){
@@ -235,5 +239,11 @@ input:hover{
 
     .img{
         width: 330px;
+    }
+
+    .popup{
+        left: 23%;
+        padding: 20px;
+        width: 350px;
     }
 }
