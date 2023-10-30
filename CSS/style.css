@@ -1,5 +1,5 @@
 /* VARIABLES */
-:root{
+ :root{
     --Tomato: hsl(4, 100%, 67%);
     --Dark-slate-grey: hsl(234, 29%, 20%);
     --Charcoal-Grey: hsl(235, 18%, 26%);
@@ -197,9 +197,6 @@ input:hover{
 }
 
 @media screen and (max-width: 890px) {
-    /* .container {
-        flex-direction: column;
-    } */
 
     form input {
         width: 100%;
@@ -244,6 +241,6 @@ input:hover{
     .popup{
         left: 23%;
         padding: 20px;
-        width: 350px;
+        width: 300px;
     }
-}
+} 
